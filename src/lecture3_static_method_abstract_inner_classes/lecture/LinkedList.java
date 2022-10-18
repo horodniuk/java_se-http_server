@@ -1,14 +1,12 @@
 package lecture3_static_method_abstract_inner_classes.lecture;
 
-import lecture2_oop_classes_inheritance_polymorphism.lecture.DataSet;
-
-public class LinkedList extends DataSet {
-    private Item first;
-    private Item last;
+public class LinkedList<E> extends DataSet<E> {
+    private Item<E> first;
+    private Item<E> last;
 
     @Override
-    public void add(int element) {
-        Item item = new Item(element);
+    public void add(E element) {
+        Item<E> item = new Item<>(element);
         if (size == 0) {
             first = last = item;
         } else {
@@ -20,14 +18,14 @@ public class LinkedList extends DataSet {
     }
 
     @Override
-    public int get(int index) {
-        Item current = findItem(index);
-        return current != null ? current.getValue() : 0;
+    public E get(int index) {
+        Item<E> current = findItem(index);
+        return current != null ? current.getValue() : null;
     }
 
-    private Item findItem(int index) {
+    private Item<E> findItem(int index) {
         int i = 0;
-        Item current = first;
+        Item<E> current = first;
         while (i < size) {
             if (i == index) {
                 return current;
@@ -40,14 +38,14 @@ public class LinkedList extends DataSet {
     }
 
     @Override
-    public int remove(int index) {
-        Item current = findItem(index);
-        return current != null ? removeCurrent(current) : 0;
+    public E remove(int index) {
+        Item<E> current = findItem(index);
+        return current != null ? removeCurrent(current) : null;
     }
 
-    private int removeCurrent(Item current) {
-        Item prev = current.getPrevious();
-        Item next = current.getNext();
+    private E removeCurrent(Item<E> current) {
+        Item<E> prev = current.getPrevious();
+        Item<E> next = current.getNext();
         if (next != null) {
             removeCurrentFromNext(next, prev);
         }
@@ -61,14 +59,14 @@ public class LinkedList extends DataSet {
         return current.getValue();
     }
 
-    private void removeCurrentFromNext(Item next, Item prev) {
+    private void removeCurrentFromNext(Item<E> next, Item<E> prev){
         next.setPrevious(prev);
         if (prev == null) {
             first = next;
         }
     }
 
-    private void removeCurrentFromPrevious(Item next, Item prev) {
+    private void removeCurrentFromPrevious(Item<E> next, Item<E> prev){
         prev.setNext(next);
         if (next == null) {
             last = prev;
@@ -81,11 +79,12 @@ public class LinkedList extends DataSet {
         first = last = null;
     }
 
+
     @Override
-    public int[] toArray() {
-        int[] array = new int[size];
+    public E[] toArray() {
+        E[] array = (E[]) new Object[size];
         int i = 0;
-        Item current = first;
+        Item<E> current = first;
         while (i < size) {
             array[i++] = current.getValue();
             current = current.getNext();
@@ -93,35 +92,33 @@ public class LinkedList extends DataSet {
         return array;
     }
 
-    public static class Item{
-        private Item next;
-        private int value;
-        private Item previous;
+    private static class Item<I> {
+        private Item<I> next;
+        private I value;
+        private Item<I> previous;
 
-        Item(int value) {
-            super();
+        Item(I value) {
             this.value = value;
         }
 
-        Item getNext() {
+        Item<I> getNext() {
             return next;
         }
 
-        void setNext(Item next) {
+        void setNext(Item<I> next) {
             this.next = next;
         }
 
-        int getValue() {
+        I getValue() {
             return value;
         }
 
-        Item getPrevious() {
+        Item<I> getPrevious() {
             return previous;
         }
 
-        void setPrevious(Item previous) {
+        void setPrevious(Item<I> previous) {
             this.previous = previous;
         }
-
     }
 }

@@ -1,6 +1,6 @@
 package lecture3_static_method_abstract_inner_classes.lecture;
 
-public abstract class DataSet {
+public abstract class DataSet<T> {
     protected int size;
     public DataSet() {
         size = 0;
@@ -11,10 +11,10 @@ public abstract class DataSet {
     public void clear() {
         size = 0;
     }
-    public abstract void add(int element);
-    public abstract int get(int index);
-    public abstract int remove(int index);
-    public abstract int[] toArray();
+    public abstract void add(T element);
+    public abstract T get(int index);
+    public abstract T remove(int index);
+    public abstract T[] toArray();
 
 
 
