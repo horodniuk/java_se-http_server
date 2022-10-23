@@ -17,6 +17,18 @@ public class LinkedList<E> extends DataSet<E> {
         size++;
     }
 
+  public   void addLinkedList (LinkedList<E> list){
+        this.size += list.size();
+        if (this.first == null){
+            this.first = list.first;
+        }
+        if (this.last != null){
+            this.last.setNext(list.first);
+            list.first.setPrevious(this.last);
+        }
+        this.last = list.last;
+    }
+
     @Override
     public E get(int index) {
         Item<E> current = findItem(index);
