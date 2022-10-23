@@ -1,0 +1,10 @@
+В классе ComparatorTest реализовать следующие методы: findMax, findMin, bubbleSort.
+Если presetComparator равен null, то использовать натуральный порядок,
+если класс элемента массива не реализует интерфейс Comparable,
+то тогда для сравнение объектов использовать System.identityHashCode(o).
+Если array = null или array.length=0, то возвращать null (findMax, findMin) или нечего не делать (bubbleSort).
+findMin и findMax отличаются только оператором сравнения;
+
+Реализовать интерфейс дроби FractionNumber;
+
+
