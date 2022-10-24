@@ -1,0 +1,14 @@
+Методы FractionNumber: setDivisor и div должны выбрасывать исключения InvalidFractionNumberArgument;
+
+Методы DataSet: get и remove должны проверять индекс и выбрасывать IndexOutOfBoundsException;
+
+Методы DataStructure: get и peek должны выбрасывать StackIsEmptyException и QueueIsEmptyException для соответствующего класса;
+
+Методы модификации DataSet для неизменяемого DataSet должны выбрасывать UnsupportedOperationException;
+
+Во всех тестовых классах, которые тестируют методы с исключениями –
+
+проверить работу методов при возникновении исключений,
+ перехватить исключения и вывести на консоль детали ошибки
+
+
