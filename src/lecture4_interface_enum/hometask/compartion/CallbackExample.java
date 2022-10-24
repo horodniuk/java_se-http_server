@@ -1,4 +1,4 @@
-package lecture4_interface_enum.hometask;
+package lecture4_interface_enum.hometask.compartion;
 
 import java.util.Arrays;
 
