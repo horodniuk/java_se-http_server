@@ -1,4 +1,4 @@
-package lecture5_exception.hometask.fraction;
+package lecture5_exception.lecture.fraction;
 
 public interface FractionNumber {
     int DEFAULT_DIVISOR = 1; // значение делителя по умолчанию, делимое равно 0

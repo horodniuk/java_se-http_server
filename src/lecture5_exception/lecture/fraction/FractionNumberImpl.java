@@ -1,4 +1,6 @@
-package lecture5_exception.hometask.fraction;
+package lecture5_exception.lecture.fraction;
+
+import lecture4_interface_enum.hometask.fraction.InvalidFractionNumberArgumentException;
 
 public class FractionNumberImpl implements FractionNumber {
     private int dividend;
@@ -67,18 +69,13 @@ public class FractionNumberImpl implements FractionNumber {
                 this.getDivisor() * secondArgument.getDivisor());
     }
 
-    @Override
     public FractionNumber div(FractionNumber secondArgument) {
         if (secondArgument.getDividend() == 0) {
-            try {
-                throw new InvalidFractionNumberArgumentException("secondArgument is 0. / by zero");
-            } catch (InvalidFractionNumberArgumentException e) {
-                e.printStackTrace();
-            }
+            throw new InvalidFractionNumberArgumentException("secondArgument is 0. / by zero");
         } else {
-            return new FractionNumberImpl(this.getDividend() * secondArgument.getDivisor(), this.getDivisor() * secondArgument.getDividend());
+            return new FractionNumberImpl(this.getDividend() * secondArgument.getDivisor(),
+                    this.getDivisor() * secondArgument.getDividend());
         }
-        return null;
     }
 
 }

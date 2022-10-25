@@ -1,4 +1,4 @@
-package lecture5_exception.hometask.fraction;
+package lecture5_exception.lecture.fraction;
 
 public class Runner {
     public static void main(String[] args) {

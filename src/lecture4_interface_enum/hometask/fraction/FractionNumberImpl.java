@@ -34,6 +34,7 @@ public class FractionNumberImpl implements FractionNumber  {
             this.divisor = divisor;
         } else {
             System.out.println("Invalid divisor");
+            throw new InvalidFractionNumberArgumentException("Invalid divisor");
         }
     }
 
@@ -69,7 +70,11 @@ public class FractionNumberImpl implements FractionNumber  {
 
     @Override
     public FractionNumber div(FractionNumber secondArgument) {
-        return new FractionNumberImpl(this.getDividend() * secondArgument.getDivisor(),
-                this.getDivisor() * secondArgument.getDividend());
+        if (secondArgument.getDividend() == 0) {
+            throw new InvalidFractionNumberArgumentException("secondArgument is 0. / by zero");
+        } else {
+            return new FractionNumberImpl(this.getDividend() * secondArgument.getDivisor(),
+                    this.getDivisor() * secondArgument.getDividend());
+        }
     }
 }
