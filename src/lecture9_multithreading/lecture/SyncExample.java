@@ -8,7 +8,7 @@ public class SyncExample {
     private List<String> list = new LinkedList<String>();
     private int count = 0;
 
-    public void addString(String s){
+    public synchronized void addString(String s){
         count++;
         try {
             TimeUnit.MILLISECONDS.sleep(100);
@@ -18,16 +18,12 @@ public class SyncExample {
         list.add(s);
     }
 
-    public String getString() {
+    public synchronized String getString() {
         if(count > 0) {
             count--;
             return list.remove(0);
         } else {
             return null;
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }

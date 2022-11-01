@@ -8,8 +8,8 @@ public class SyncNotWorkingExample {
             new Thread(new Runnable() {
                 @Override
                 public synchronized void run() {
-                    for(int i=0;i<5;i++) {
-                        System.out.println(Thread.currentThread().getName()+"->"+i);
+                    for (int i = 0; i < 5; i++) {
+                        System.out.println(Thread.currentThread().getName() + "->" + i);
                         try {
                             TimeUnit.MILLISECONDS.sleep(200);
                         } catch (InterruptedException e) {
@@ -17,7 +17,7 @@ public class SyncNotWorkingExample {
                         }
                     }
                 }
-            }, "Thread-"+i).start();
+            }, "Thread-" + i).start();
         }
     }
 }
