@@ -1,4 +1,4 @@
-package lecture8_io;
+package lecture8_io.lecture;
 
 import java.io.*;
 
