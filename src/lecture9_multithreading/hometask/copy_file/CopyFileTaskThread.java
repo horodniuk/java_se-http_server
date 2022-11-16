@@ -1,4 +1,4 @@
-package lecture9_multithreading.hometask;
+package lecture9_multithreading.hometask.copy_file;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -11,7 +11,7 @@ public class CopyFileTaskThread implements Task, Runnable {
     private Thread thread;
     private volatile long poesentCopy;
 
-    public CopyFileTaskThread(Path sourcePath, Path destinationPath, long sourseSize, Thread thread, long poesentCopy) throws IOException {
+    public CopyFileTaskThread(Path sourcePath, Path destinationPath) throws IOException {
         this.sourcePath = sourcePath;
         this.destinationPath = destinationPath;
         this.sourseSize = Files.size(sourcePath);
@@ -20,7 +20,7 @@ public class CopyFileTaskThread implements Task, Runnable {
     }
 
     @Override
-    public void start() {
+    public void start() throws InterruptedException {
         if (thread.getState() != Thread.State.NEW){
             throw new IllegalArgumentException("Copy file already execution");
         } else {
