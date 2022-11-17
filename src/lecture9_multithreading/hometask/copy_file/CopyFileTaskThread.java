@@ -9,14 +9,14 @@ public class CopyFileTaskThread implements Task, Runnable {
     private Path destinationPath;
     private long sourseSize;
     private Thread thread;
-    private volatile long poesentCopy;
+    private volatile long percentCopy;
 
     public CopyFileTaskThread(Path sourcePath, Path destinationPath) throws IOException {
         this.sourcePath = sourcePath;
         this.destinationPath = destinationPath;
         this.sourseSize = Files.size(sourcePath);
         this.thread = new Thread(this, "CopyFileTaskThread");
-        this.poesentCopy = 0;
+        this.percentCopy = 0;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CopyFileTaskThread implements Task, Runnable {
 
     @Override
     public int getPersentProcesses() {
-        return (int) (this.poesentCopy * 100 / sourseSize);
+        return (int) (this.percentCopy * 100 / sourseSize);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class CopyFileTaskThread implements Task, Runnable {
                     break;
                 }
                 out.write(buffer, 0, read);
-                poesentCopy += read;
+                percentCopy += read;
             }
 
         } catch (IOException e) {
