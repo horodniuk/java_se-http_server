@@ -10,7 +10,7 @@ public class ThreadPropertiesTest {
             }
         });
         th.setDaemon(false);
-        th.setName("Test thread");
+        th.setName("r.Test thread");
         th.setPriority(Thread.MAX_PRIORITY);
         th.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override

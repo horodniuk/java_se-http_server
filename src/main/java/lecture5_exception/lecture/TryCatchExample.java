@@ -25,7 +25,7 @@ public class TryCatchExample {
         private static void method3() throws IllegalAccessException {
             System.out.println("Before exception");
             if(System.currentTimeMillis() > 0) {
-                throw new IllegalAccessException("Test exception");
+                throw new IllegalAccessException("r.Test exception");
             }
             System.out.println("After exception");
         }
