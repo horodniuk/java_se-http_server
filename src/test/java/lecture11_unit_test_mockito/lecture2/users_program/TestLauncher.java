@@ -16,9 +16,9 @@ public class TestLauncher {
         final var summaryGeneratingListener = new SummaryGeneratingListener();
         LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder
                 .request()
-                //.selectors(DiscoverySelectors.selectClass(UserServiseTest.class))
+                // .selectors(DiscoverySelectors.selectClass(UserServiseTest.class))
                 .selectors(DiscoverySelectors.selectPackage("lecture11_unit_test_mockito.lecture2.users_program"))
-                .filters(TagFilter.includeTags("login"))
+                // .filters(TagFilter.includeTags("login"))
                 .listeners()
                 .build();
 

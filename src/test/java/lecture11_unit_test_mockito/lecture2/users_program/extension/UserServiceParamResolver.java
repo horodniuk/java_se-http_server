@@ -1,4 +1,4 @@
-package lecture11_unit_test_mockito.lecture2.users_program.paramresolver;
+package lecture11_unit_test_mockito.lecture2.users_program.extension;
 
 import lecture11_unit_test_mockito.lecture2.users_program.service.UserService;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -15,6 +15,6 @@ public class UserServiceParamResolver implements ParameterResolver {
 
     @Override
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return new UserService();
+        return new UserService(null);
     }
 }
