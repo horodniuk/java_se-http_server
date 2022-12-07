@@ -4,7 +4,6 @@ import lecture11_unit_test_mockito.lecture2.users_program.dao.UserDao;
 import lecture11_unit_test_mockito.lecture2.users_program.dto.User;
 import lombok.SneakyThrows;
 
-import java.sql.SQLException;
 import java.util.*;
 import java.util.function.Function;
 
@@ -18,7 +17,7 @@ public class UserService {
         this.userDao = userDao;
     }
     @SneakyThrows
-    public boolean delete(Integer userId) {
+    public boolean deleteByUserId(Integer userId) {
         return userDao.delete(userId);
     }
 

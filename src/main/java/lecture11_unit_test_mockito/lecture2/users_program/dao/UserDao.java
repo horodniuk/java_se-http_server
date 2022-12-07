@@ -8,7 +8,8 @@ import java.sql.SQLException;
 public class UserDao {
     @SneakyThrows
     public boolean delete (Integer userId) throws SQLException {
-        try(var connection = DriverManager.getConnection("url", "username", "password")) {
+        try(var connection = DriverManager.getConnection(
+                "url", "username", "password")) {
             return true;
         }
 
