@@ -1,7 +1,6 @@
-package lecture_0_functional_programming.lecture.generic;
+package lecture0_functional_programming.generic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Counter<T extends Serializable> {
     T t;

@@ -1,9 +1,6 @@
-package lecture_0_functional_programming.lecture;
+package lecture0_functional_programming.stream;
 
 import java.util.List;
-import java.util.function.IntUnaryOperator;
-import java.util.function.UnaryOperator;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 

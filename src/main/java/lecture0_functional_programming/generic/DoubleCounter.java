@@ -1,4 +1,4 @@
-package lecture_0_functional_programming.lecture.generic;
+package lecture0_functional_programming.generic;
 
 public class DoubleCounter {
     Double doubleCounter;

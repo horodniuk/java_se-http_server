@@ -1,4 +1,6 @@
-package lecture_0_functional_programming.lecture;
+package lecture0_functional_programming.stream;
+
+import lecture_0_functional_programming.lecture.Student;
 
 import java.util.Optional;
 import java.util.stream.Stream;
