@@ -1,0 +1,4 @@
+1) Открыть devTool в Хроме
+2) Поставить галочку Preserve log на вкладке Network
+3) Обновить страницу
+4) Посмотреть Response & Request
