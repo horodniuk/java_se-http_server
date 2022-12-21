@@ -1,4 +1,4 @@
-package lecture_0_functional_programming.lecture;
+package lecture0_functional_programming.stream;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

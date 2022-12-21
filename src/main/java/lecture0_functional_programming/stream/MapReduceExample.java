@@ -1,7 +1,5 @@
 package lecture0_functional_programming.stream;
 
-import lecture_0_functional_programming.lecture.Student;
-
 import java.util.stream.Stream;
 
 public class MapReduceExample {
