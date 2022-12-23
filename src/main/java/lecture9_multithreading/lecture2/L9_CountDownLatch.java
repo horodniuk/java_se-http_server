@@ -9,7 +9,7 @@ public class L9_CountDownLatch {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(3);
         ExecutorService service = Executors.newFixedThreadPool(1);
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 3; i++) {
             service.submit(new Processor(countDownLatch));
         }
         service.shutdown();

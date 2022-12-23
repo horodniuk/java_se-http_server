@@ -13,9 +13,9 @@ public class PoolThread extends Thread {
     @Override
     public void run() {
         while (true){
-            Optional<Runnable> task = Optional.empty();
+            Optional<Runnable> task = Optional.empty();  // пока нету задач
             synchronized (tasks){
-                if (!tasks.isEmpty()){
+                if (!tasks.isEmpty()){  // если задача которую мы должны решить
                     task = Optional.of(tasks.remove());
                 }
             }
