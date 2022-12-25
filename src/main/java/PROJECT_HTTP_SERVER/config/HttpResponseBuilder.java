@@ -1,4 +1,4 @@
-package lecture16_http_interface.config;
+package PROJECT_HTTP_SERVER.config;
 
 public interface HttpResponseBuilder {
     ReadableHttpResponse buildNewHttpResponse();

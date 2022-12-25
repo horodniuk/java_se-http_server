@@ -1,4 +1,4 @@
-package lecture16_http_interface.exeptions;
+package PROJECT_HTTP_SERVER.exeptions;
 
 public class HttpServerException extends RuntimeException {
     private int statusCode = 500;

@@ -1,6 +1,6 @@
-package lecture16_http_interface;
+package PROJECT_HTTP_SERVER;
 
-import lecture16_http_interface.impl.HttpServerFactory;
+import PROJECT_HTTP_SERVER.impl.HttpServerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

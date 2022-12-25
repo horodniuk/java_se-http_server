@@ -1,4 +1,4 @@
-package lecture16_http_interface.exeptions;
+package PROJECT_HTTP_SERVER.exeptions;
 
 public class BadRequestException extends AbstractRequestParseFalledException {
     public BadRequestException(String message, Throwable cause, String startingLine) {

@@ -1,8 +1,7 @@
-package lecture16_http_interface.config;
+package PROJECT_HTTP_SERVER.config;
 
-import lecture16_http_interface.HttpRequest;
-import lecture16_http_interface.HttpServer;
-import lecture16_http_interface.exeptions.HttpServerException;
+import PROJECT_HTTP_SERVER.HttpRequest;
+import PROJECT_HTTP_SERVER.exeptions.HttpServerException;
 
 import java.io.IOException;
 import java.io.InputStream;

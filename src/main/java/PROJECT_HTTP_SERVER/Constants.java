@@ -1,6 +1,5 @@
-package lecture16_http_interface;
+package PROJECT_HTTP_SERVER;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Constants {

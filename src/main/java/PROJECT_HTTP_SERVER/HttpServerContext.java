@@ -1,4 +1,4 @@
-package lecture16_http_interface;
+package PROJECT_HTTP_SERVER;
 
 import javax.sql.DataSource;
 import java.nio.file.Path;

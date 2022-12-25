@@ -1,4 +1,4 @@
-package lecture16_http_interface;
+package PROJECT_HTTP_SERVER;
 /**
  * Текущее состояние сервера, которое будет доступно всем обработчикам
  */

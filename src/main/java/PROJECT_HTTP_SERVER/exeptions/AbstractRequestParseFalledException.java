@@ -1,4 +1,4 @@
-package lecture16_http_interface.exeptions;
+package PROJECT_HTTP_SERVER.exeptions;
 
 public abstract class AbstractRequestParseFalledException extends HttpServerException {
     private final String startingLine;

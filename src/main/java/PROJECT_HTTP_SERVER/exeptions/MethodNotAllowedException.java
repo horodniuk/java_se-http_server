@@ -1,6 +1,6 @@
-package lecture16_http_interface.exeptions;
+package PROJECT_HTTP_SERVER.exeptions;
 
-import lecture16_http_interface.Constants;
+import PROJECT_HTTP_SERVER.Constants;
 
 public class MethodNotAllowedException extends AbstractRequestParseFalledException {
     public MethodNotAllowedException(String method, String startingLine) {

@@ -1,6 +1,6 @@
-package lecture16_http_interface.impl;
+package PROJECT_HTTP_SERVER.impl;
 
-import lecture16_http_interface.HttpServer;
+import PROJECT_HTTP_SERVER.HttpServer;
 
 import java.util.Properties;
 

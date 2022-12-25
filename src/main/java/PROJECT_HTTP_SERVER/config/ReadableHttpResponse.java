@@ -1,6 +1,6 @@
-package lecture16_http_interface.config;
+package PROJECT_HTTP_SERVER.config;
 
-import lecture16_http_interface.HttpResponse;
+import PROJECT_HTTP_SERVER.HttpResponse;
 
 import java.util.Map;
 

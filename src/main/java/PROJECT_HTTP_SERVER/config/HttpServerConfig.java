@@ -1,7 +1,7 @@
-package lecture16_http_interface.config;
+package PROJECT_HTTP_SERVER.config;
 
-import lecture16_http_interface.HttpServerContext;
-import lecture16_http_interface.ServerInfo;
+import PROJECT_HTTP_SERVER.HttpServerContext;
+import PROJECT_HTTP_SERVER.ServerInfo;
 
 import java.net.Socket;
 import java.util.concurrent.ThreadFactory;

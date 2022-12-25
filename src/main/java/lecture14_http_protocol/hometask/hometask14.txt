@@ -1,4 +1,0 @@
-Проанализировать стартовые строки, HTTP заголовки и тела запросов для следующих
-ресурсов:
-https://devstudy-net.github.io/http-study/index.html
-https://www.facebook.com/
