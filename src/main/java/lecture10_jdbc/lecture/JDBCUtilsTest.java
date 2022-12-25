@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class JDBCUtilsTest {
     public static void main(String[] args) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(
+       /* try (Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")) {
@@ -27,6 +27,6 @@ public class JDBCUtilsTest {
                     });
             System.out.println(map);
         }
-
+*/
     }
 }

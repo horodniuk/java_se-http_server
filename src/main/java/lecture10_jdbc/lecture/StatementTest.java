@@ -7,7 +7,7 @@ import java.sql.*;
 public class StatementTest {
     @SneakyThrows
     public static void main(String[] args) {
-        try(Connection connection = DriverManager.getConnection(
+       /* try(Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")){
@@ -27,6 +27,6 @@ public class StatementTest {
                 try (ResultSet rs = statement.executeQuery("select * from students")) {
                 }
             }
-        }
+        }*/
     }
 }

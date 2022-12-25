@@ -1,19 +1,20 @@
 package lecture10_jdbc.lecture;
 
-import org.postgresql.ds.PGPoolingDataSource;
+
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class GetConnectionTest {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args)  {
        /* try (Connection c = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres", "1234")) {
             System.out.println(c.isValid(0));
-        }*/
+        }
 
         //  2 variant-----------------------------------------------
         DataSource ds = createPostgresqlDataSource();
@@ -36,6 +37,6 @@ public class GetConnectionTest {
         ds.setInitialConnections(1);
         ds.setMaxConnections(3);
         return ds;
+    }*/
     }
-
 }

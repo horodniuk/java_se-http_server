@@ -29,14 +29,14 @@ public class DownloadImageExecutor {
         this.targetDir = targetDir;
     }
 
-    public void launcher() throws IOException {
+  /*  public void launcher() throws IOException {
         ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
         List<String> links = Files.readAllLines(Paths.get("resources/files_for_multithread_module/source/index.txt"), StandardCharsets.UTF_8);
         for(String link : links) {
             executorService.submit(new DownloadTask(link, targetDir, executorService, tryCount));
         }
         executorService.shutdown();
-    }
+    }*/
 
  /*   public static String readStringFromURL(String requestURL) throws IOException {
         List<String> arrayList = new ArrayList<>();

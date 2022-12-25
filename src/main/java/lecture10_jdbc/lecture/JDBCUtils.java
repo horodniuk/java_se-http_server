@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCUtils {
-    public static <T> T select(Connection connection, String sql, ResultSetHandler<T> resultSetHandler, Object... parameters)
+   /* public static <T> T select(Connection connection, String sql, ResultSetHandler<T> resultSetHandler, Object... parameters)
             throws SQLException {
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             populatePreparedStatement(preparedStatement, parameters);
@@ -34,5 +34,5 @@ public class JDBCUtils {
                 ps.setObject(i + 1, parameters[i]);
             }
         }
-    }
+    }*/
 }

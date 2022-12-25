@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class TransactionTest {
     public static void main(String[] args) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(
+       /* try (Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")) {
@@ -19,6 +19,6 @@ public class TransactionTest {
                 System.out.println("Deleted " + deleted + " row");
             }
             connection.commit();  // only after commit data send to dataBase
-        }
+        }*/
     }
 }

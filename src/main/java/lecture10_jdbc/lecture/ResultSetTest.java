@@ -7,7 +7,7 @@ import java.sql.*;
 public class ResultSetTest {
     @SneakyThrows
     public static void main(String[] args) {
-        try(Connection connection = DriverManager.getConnection(
+      /*  try(Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres", "1234")){
 
@@ -21,18 +21,18 @@ public class ResultSetTest {
                    }
 
                    System.out.println("___________________");
-                 /*  try(ResultSet rs = statement.executeQuery("select * from students")) {
+                 *//*  try(ResultSet rs = statement.executeQuery("select * from students")) {
                        while(rs.next()){
                            System.out.println(resultSet.getLong("id")+", "
                                               +resultSet.getString("first_name")+", "
                                               +resultSet.getString("last_name")+", "
                                               +resultSet.getInt("age"));
                        }
-                   }*/
+                   }*//*
                }
             }
 
 
-        }
+        }*/
     }
 }

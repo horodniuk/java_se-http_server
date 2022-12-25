@@ -9,11 +9,11 @@ import java.sql.PreparedStatement;
 public class DMLTest {
     @SneakyThrows
     public static void main(String[] args) {
-        try (Connection connection = DriverManager.getConnection(
+       /*  try (Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")) {
-        /*    try (PreparedStatement preparedStatement = connection.prepareStatement("insert into students values(?,?,?,?)")) {
+           try (PreparedStatement preparedStatement = connection.prepareStatement("insert into students values(?,?,?,?)")) {
                 preparedStatement.setLong(1, 20);
                 preparedStatement.setString(2, "Jack");
                 preparedStatement.setString(3, "Sparrow");
@@ -29,12 +29,12 @@ public class DMLTest {
                 preparedStatement.setLong(4, 0);
                 int updated = preparedStatement.executeUpdate();
                 System.out.println("Updated " + updated + " row");
-            }*/
+            }
             try (PreparedStatement preparedStatement = connection.prepareStatement("delete from students where id=?")) {
                 preparedStatement.setLong(1, 20);
                 int deleted = preparedStatement.executeUpdate();
                 System.out.println("Deleted " + deleted + " row");
             }
-        }
+        }*/
     }
 }

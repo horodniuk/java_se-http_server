@@ -13,7 +13,7 @@ public class BatchOperations {
 
     @SneakyThrows
     public static void main(String[] args) {
-        try (Connection c = DriverManager.getConnection(
+       /* try (Connection c = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")) {
@@ -28,6 +28,6 @@ public class BatchOperations {
                 int[] inserted = ps.executeBatch();
                 System.out.println("Inserted " + Arrays.toString(inserted) + " rows");
             }
-        }
+        }*/
     }
 }

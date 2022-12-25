@@ -7,16 +7,16 @@ import java.util.Scanner;
 
 public class CopyFileTaskTest {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Path sourcePath = Paths.get("conspect.txt");
+      /*   Path sourcePath = Paths.get("conspect.txt");
         Path destinationPath = Paths.get("resources/files_for_multithread_module/text.txt");
         Task taskCopyFile = new CopyFileTaskThread(sourcePath, destinationPath);
-     /*   System.out.println("If you want copy file " +  Paths.get("conspect.txt") + " to "
+       System.out.println("If you want copy file " +  Paths.get("conspect.txt") + " to "
                            + Paths.get("resources/files_for_multithread_module/text.txt") + " Press Enter");
         Scanner s = new Scanner(System.in);
         if (s.hasNextLine()){
             taskCopyFile.start();
 
-        }*/
+        }
         taskCopyFile.start();
         System.out.println("Download starting");
 
@@ -33,6 +33,6 @@ public class CopyFileTaskTest {
             } else if (s.equals("q")){
                 break;
             }
-        }
+        }*/
     }
 }

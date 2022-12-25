@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class QueryResultSetTest {
     public static void main(String[] args) throws SQLException {
-        try (Connection connection = DriverManager.getConnection(
+       /* try (Connection connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost:5432/student",
                 "postgres",
                 "1234")) {
@@ -29,7 +29,7 @@ public class QueryResultSetTest {
                     }
                 }
             }
-        }
+        }*/
     }
 
     private static void display(String value) {

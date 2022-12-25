@@ -1,6 +1,6 @@
 package lecture9_multithreading.lecture3.concurrent.barrier;
 
-import org.postgresql.geometric.PGcircle;
+
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
