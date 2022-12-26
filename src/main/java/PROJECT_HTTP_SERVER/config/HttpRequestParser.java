@@ -9,6 +9,6 @@ import java.io.InputStream;
 /**
  * Компонент будет парсить http запрос
  */
-public interface HttpRequestParser extends Runnable {
+public interface HttpRequestParser {
     HttpRequest parseHttpRequest(InputStream inputStream, String remoteAddress) throws IOException, HttpServerException;
 }
