@@ -14,6 +14,6 @@ public interface HttpResponse {
 
     void setBody(InputStream in);
 
-    void setBody(Reader reaser);
+    void setBody(Reader reader);
 
 }

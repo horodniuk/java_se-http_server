@@ -6,7 +6,7 @@ import PROJECT_HTTP_SERVER.ServerInfo;
 import java.net.Socket;
 import java.util.concurrent.ThreadFactory;
 
-public interface HttpServerConfig {
+public interface HttpServerConfig extends AutoCloseable {
     ServerInfo getServerInfo();
 
     String getStatusMessage(int statusCode);

@@ -73,7 +73,7 @@ public class DefaultReadableHttpResponse implements ReadableHttpResponse {
     }
 
     @Override
-    public int getSatus() {
+    public int getStatus() {
         return status;
     }
 
@@ -89,11 +89,11 @@ public class DefaultReadableHttpResponse implements ReadableHttpResponse {
 
     @Override
     public boolean isBodyEmpty() {
-        return getBodyLenght() == 0;
+        return getBodyLength() == 0;
     }
 
     @Override
-    public int getBodyLenght() {
+    public int getBodyLength() {
         return body.length;
     }
 }

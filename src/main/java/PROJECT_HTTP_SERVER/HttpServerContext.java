@@ -7,11 +7,11 @@ import java.util.Properties;
 /**
  * Информация о настройках сервера к которой должны иметь доступы обработчики
  */
-public interface HttpServerContext {
+public interface HttpServerContext  {
     ServerInfo getServerInfo();
     Collection<String> getSupportedRequestMethod();
     Properties getSupportedResponseStatuses();
-    DataSource getDataSourse();
+    DataSource getDataSource();
     Path getRootPaht();
     String getContentType(String extension);
     HtmlTemplateManager getHtmlTemplateManager();

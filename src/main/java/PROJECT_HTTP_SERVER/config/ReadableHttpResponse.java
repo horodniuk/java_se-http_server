@@ -8,10 +8,10 @@ import java.util.Map;
  * описывает методы для чтения данных ответа
  */
 public interface ReadableHttpResponse extends HttpResponse {
-    int getSatus();
+    int getStatus();
 
     Map<String, String> getHeaders();
     byte[] getBody();
     boolean isBodyEmpty();
-    int getBodyLenght();
+    int getBodyLength();
 }
