@@ -14,9 +14,9 @@ public class DefaultThreadFactory implements ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        Thread th = new Thread(r, name + (count++));
-        th.setDaemon(false);
-        th.setPriority(8);
-        return th;
+        Thread thread = new Thread(r, name + (count++));
+        thread.setDaemon(false);
+        thread.setPriority(8);
+        return thread;
     }
 }
