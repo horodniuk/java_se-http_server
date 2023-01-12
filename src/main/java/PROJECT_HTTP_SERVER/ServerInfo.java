@@ -1,11 +1,12 @@
 package PROJECT_HTTP_SERVER;
+
 /**
  * Текущее состояние сервера, которое будет доступно всем обработчикам
  */
 public class ServerInfo {
-    private String name; // имя сервера
-    private int port;    // порт сервера
-    private int threadCount; // кол-во потоков
+    private final String name; // имя сервера
+    private final int port;    // порт сервера
+    private final int threadCount; // кол-во потоков
 
     public ServerInfo(String name, int port, int threadCount) {
         this.name = name;
@@ -17,25 +18,16 @@ public class ServerInfo {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getPort() {
         return port;
     }
 
-    public void setPort(int port) {
-        this.port = port;
-    }
 
     public int getThreadCount() {
         return threadCount;
     }
 
-    public void setThreadCount(int threadCount) {
-        this.threadCount = threadCount;
-    }
 
     @Override
     public String toString() {
