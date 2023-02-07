@@ -1,27 +1,11 @@
-<!DOCTYPE xml>
-<xml>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36}: %msg%n</pattern>
+            <pattern>[LogBack]%d{yyyy-MM-dd HH:mm:ss:SSS} %5p %t %c{2}:%L - %m%n</pattern>
         </encoder>
     </appender>
-    <!--appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>http-server-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
-            <maxFileSize>100MB</maxFileSize>
-            <maxHistory>60</maxHistory>
-            <totalSizeCap>20GB</totalSizeCap>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36}: %msg%n</pattern>
-        </encoder>
-    </appender-->
-
-
-
-    <root>
-        <level>trace</level>
-        <appender-ref ref="STDOUT" />
-        <!--appender-ref ref="ROLLING" /-->
+    <root level="trace">
+        <appender-ref ref="stdout"/>
     </root>
-</xml>
+</configuration>
