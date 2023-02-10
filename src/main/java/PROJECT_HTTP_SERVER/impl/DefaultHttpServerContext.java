@@ -51,7 +51,7 @@ public class DefaultHttpServerContext extends AbstractHttpConfigurableComponent 
 
 
     @Override
-    public Path getRootPaht() {
+    public Path getRootPath() {
         return getHttpServerConfig().getRootPath();
     }
 

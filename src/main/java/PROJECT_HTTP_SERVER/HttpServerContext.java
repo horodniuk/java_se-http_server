@@ -12,7 +12,7 @@ public interface HttpServerContext  {
     Collection<String> getSupportedRequestMethod();
     Properties getSupportedResponseStatuses();
     DataSource getDataSource();
-    Path getRootPaht();
+    Path getRootPath();
     String getContentType(String extension);
     HtmlTemplateManager getHtmlTemplateManager();
     Integer getExpiresDaysForResourse(String extension);  // сколько будет кешироваться данный ресурс

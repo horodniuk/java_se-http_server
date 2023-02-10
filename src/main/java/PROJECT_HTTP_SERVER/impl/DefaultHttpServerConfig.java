@@ -58,7 +58,7 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
         this.httpRequestParser = new DefaultHttpRequestParser();
         this.httpResponseWriter = new DefaultHttpResponseWriter(this);
         this.httpResponseBuilder = new DefaultHttpResponseBuilder(this);
-        this.httpRequestDispatcher = new HelloWorldHttpRequestDispatcher();
+        this.httpRequestDispatcher = new DefaultHttpHandler();
         this.workerThreadFactory = new DefaultThreadFactory();
         this.htmlTemplateManager = null;
     }
@@ -94,7 +94,7 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
         try (InputStream in = classLoader.getResourceAsStream(resource)) {
             if (in != null) {
                 statusesProperties.load(in);
-                LOGGER.debug("Successful loaded properties from classpath resource: {}", resource);
+              LOGGER.debug("Successful loaded properties from classpath resource: {}", resource);
             } else {
                 throw new HttpServerConfigException("Classpath resource not found: " + resource);
             }
