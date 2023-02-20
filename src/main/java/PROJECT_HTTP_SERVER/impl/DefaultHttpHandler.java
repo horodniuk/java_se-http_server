@@ -54,7 +54,7 @@ public class DefaultHttpHandler implements HttpRequestDispatcher {
         try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream(directoryPath)){
             for(Path path : directoryStream){
                 htmlBody.append("<a href=\"")
-                        .append(getHref(root, directoryPath))
+                        .append(getHref(root, path))
                         .append("\">")
                         .append(path.getFileName())
                         .append("</a><br>\r\n");
