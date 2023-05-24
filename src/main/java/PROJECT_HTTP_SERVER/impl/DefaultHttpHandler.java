@@ -25,7 +25,6 @@ public class DefaultHttpHandler implements HttpRequestDispatcher {
         }
         else {
             httpResponse.setStatus(404);
-            httpResponse.setBody("<h1>Not found</h1>");
         }
     }
 

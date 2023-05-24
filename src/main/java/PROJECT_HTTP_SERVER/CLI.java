@@ -1,5 +1,7 @@
 package PROJECT_HTTP_SERVER;
 
+import PROJECT_HTTP_SERVER.handler.ServerInfoHttpHandler;
+import PROJECT_HTTP_SERVER.handler.TestJdbcHandler;
 import PROJECT_HTTP_SERVER.impl.HttpServerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,5 +38,11 @@ public class CLI {
                 }
             }
         }
+    }
+
+    private static HandlerConfig getHandlerConfig(){
+        return new HandlerConfig()
+                .addHandler("/info", new ServerInfoHttpHandler())
+                .addHandler("/jdbc", new TestJdbcHandler());
     }
 }

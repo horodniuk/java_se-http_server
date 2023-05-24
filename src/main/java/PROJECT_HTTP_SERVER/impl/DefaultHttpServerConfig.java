@@ -60,7 +60,7 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
         this.httpResponseBuilder = new DefaultHttpResponseBuilder(this);
         this.httpRequestDispatcher = new DefaultHttpHandler();
         this.workerThreadFactory = new DefaultThreadFactory();
-        this.htmlTemplateManager = null;
+        this.htmlTemplateManager =  new DefaultHtmlTemplateManager();
     }
 
     /**

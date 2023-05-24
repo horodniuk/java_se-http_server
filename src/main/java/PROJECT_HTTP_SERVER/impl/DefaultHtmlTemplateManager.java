@@ -21,6 +21,7 @@ public class DefaultHtmlTemplateManager implements HtmlTemplateManager {
 
 
 
+
     private String getTemplate(String templateName) {
         String template = templates.get(templateName);
         if(template == null){
@@ -38,11 +39,15 @@ public class DefaultHtmlTemplateManager implements HtmlTemplateManager {
     }
 
     private String populateTemplate(String template, Map<String, Object> args) {
-        return null;
+        String html = template;
+        for (Map.Entry<String, Object> entry : args.entrySet()) {
+            html = html.replace("${" + entry.getKey() + "}", String.valueOf(entry.getValue()));
+        }
+        return html;
     }
 
-    private InputStream getClasspathResource(String s) {
-        return null;
+    private InputStream getClasspathResource(String name) {
+        return DefaultHtmlTemplateManager.class.getClassLoader().getResourceAsStream(name);
     }
 
 }

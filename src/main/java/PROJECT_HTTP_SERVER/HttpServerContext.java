@@ -9,11 +9,13 @@ import java.util.Properties;
  */
 public interface HttpServerContext  {
     ServerInfo getServerInfo();
-    Collection<String> getSupportedRequestMethod();
+    Collection<String> getSupportedRequestMethods();
     Properties getSupportedResponseStatuses();
     DataSource getDataSource();
     Path getRootPath();
     String getContentType(String extension);
     HtmlTemplateManager getHtmlTemplateManager();
     Integer getExpiresDaysForResourse(String extension);  // сколько будет кешироваться данный ресурс
+
+
 }

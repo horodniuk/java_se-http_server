@@ -38,7 +38,7 @@ public class DefaultHttpServerContext extends AbstractHttpConfigurableComponent 
     }
 
     @Override
-    public Collection<String> getSupportedRequestMethod() {
+    public Collection<String> getSupportedRequestMethods() {
         return Constants.ALLOWED_METHODS;
     }
 

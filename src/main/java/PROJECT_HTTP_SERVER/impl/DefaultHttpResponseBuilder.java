@@ -3,8 +3,10 @@ package PROJECT_HTTP_SERVER.impl;
 import PROJECT_HTTP_SERVER.config.HttpResponseBuilder;
 import PROJECT_HTTP_SERVER.config.HttpServerConfig;
 import PROJECT_HTTP_SERVER.config.ReadableHttpResponse;
+import PROJECT_HTTP_SERVER.utils.DataUtils;
 
 import java.util.Date;
+import java.util.Map;
 
 /*
 --- Example Response ---
@@ -42,13 +44,23 @@ class DefaultHttpResponseBuilder extends AbstractHttpConfigurableComponent imple
 
     @Override
     public void prepareHttpResponse(ReadableHttpResponse response, boolean clearBody) {
-        if (response.getStatus() >= 400 && response.isBodyEmpty()) {
+        if (response.getStatus() >= 400  && response.isBodyEmpty()) {
             // добавить шаблон страницы с кодом ошибки
+            setDefaultResponseErrorBody(response);
         }
         setContentLength(response);
         if (clearBody) {
             clearBody(response);
         }
+    }
+
+    protected void setDefaultResponseErrorBody(ReadableHttpResponse response) {
+        Map<String, Object> args = DataUtils.buildMap(new Object[][] {
+                { "STATUS-CODE", response.getStatus() },
+                { "STATUS-MESSAGE", httpServerConfig.getStatusMessage(response.getStatus()) }
+        });
+        String content = httpServerConfig.getHttpServerContext().getHtmlTemplateManager().processTemplate("error.html", args);
+        response.setBody(content);
     }
 
     protected void setContentLength(ReadableHttpResponse response) {
