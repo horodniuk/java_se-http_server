@@ -1,8 +1,6 @@
 package PROJECT_HTTP_SERVER.impl;
 
-import PROJECT_HTTP_SERVER.HtmlTemplateManager;
-import PROJECT_HTTP_SERVER.HttpServerContext;
-import PROJECT_HTTP_SERVER.ServerInfo;
+import PROJECT_HTTP_SERVER.*;
 import PROJECT_HTTP_SERVER.config.*;
 import PROJECT_HTTP_SERVER.exeptions.HttpServerConfigException;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -31,6 +29,7 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
     private final Properties serverProperties = new Properties(); // основные настройки
     private final Properties statusesProperties = new Properties();  // статус код - описание
     private final Properties mimeTypesProperties = new Properties(); // расширение файла - майм тайп
+    private final Map<String, HttpHandler> httpHandlers;
     private final BasicDataSource dataSource; // для пула соеденений к базе данных
     private final Path rootPath; // путь к корневой директории
     private final HttpServerContext httpServerContext;
@@ -38,15 +37,17 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
     private final HttpResponseWriter httpResponseWriter;
     private final HttpResponseBuilder httpResponseBuilder;
     private final HttpRequestDispatcher httpRequestDispatcher; // обработчик запросов
+    private final HttpHandler defaultHttpHandler;
     private final ThreadFactory workerThreadFactory; // для создания новых потоков
     private final HtmlTemplateManager htmlTemplateManager; // для сохдания html страничек
     private final ServerInfo serverInfo;
     private final List<String> staticExpiresExtensions; // статические ресурсы которые должны устаревать
     private final int staticExpiresDays;  // сколько дней должен устаривать данный ресурс
 
-    DefaultHttpServerConfig(Properties overrideServerProperties) {
+    DefaultHttpServerConfig(HandlerConfig handlerConfig,  Properties overrideServerProperties) {
         super();
         loadAllProperties(overrideServerProperties);
+        this.httpHandlers = handlerConfig != null ? handlerConfig.toMap() : (Map<String, HttpHandler>) Collections.EMPTY_MAP;
         this.rootPath = createRootPath();
         this.dataSource = createBasicDataSource();
         this.serverInfo = createServerInfo();
@@ -58,7 +59,8 @@ public class DefaultHttpServerConfig implements HttpServerConfig {
         this.httpRequestParser = new DefaultHttpRequestParser();
         this.httpResponseWriter = new DefaultHttpResponseWriter(this);
         this.httpResponseBuilder = new DefaultHttpResponseBuilder(this);
-        this.httpRequestDispatcher = new DefaultHttpHandler();
+        this.defaultHttpHandler = new DefaultHttpHandler();
+        this.httpRequestDispatcher  = new DefaultHttpRequestDispatcher(defaultHttpHandler, this.httpHandlers);
         this.workerThreadFactory = new DefaultThreadFactory();
         this.htmlTemplateManager =  new DefaultHtmlTemplateManager();
     }

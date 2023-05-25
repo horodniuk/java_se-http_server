@@ -18,7 +18,7 @@ public class CLI {
         Thread.currentThread().setName("CLI-main thread");
         try {
             HttpServerFactory httpServerFactory = HttpServerFactory.create();
-            HttpServer httpServer = httpServerFactory.createHttpServer(null);
+            HttpServer httpServer = httpServerFactory.createHttpServer(getHandlerConfig(),null);
             httpServer.start();
             waitForStopCommand(httpServer);
         } catch (Exception e) {
